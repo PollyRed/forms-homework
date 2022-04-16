@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 
-jest.setTimeout(30000);
+jest.setTimeout(80000);
 describe('Popover', () => {
   let browser = null;
   let page = null;
@@ -9,7 +9,7 @@ describe('Popover', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       // headless: false,
-      slowMo: 100,
+      // slowMo: 100,
       // devtools: true,
     });
     page = await browser.newPage();
