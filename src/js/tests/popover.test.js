@@ -5,6 +5,7 @@ describe('Popover', () => {
   let browser = null;
   let page = null;
   const baseUrl = 'http://localhost:8888';
+
   beforeAll(async () => {
     browser = await puppetteer.launch({
       // headless: false,
@@ -13,6 +14,7 @@ describe('Popover', () => {
     });
     page = await browser.newPage();
   });
+
   afterAll(async () => {
     await browser.close();
   });
