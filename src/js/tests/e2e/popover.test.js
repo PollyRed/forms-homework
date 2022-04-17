@@ -7,13 +7,7 @@ describe('Popover', () => {
   const baseUrl = 'http://localhost:8888';
 
   beforeAll(async () => {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-dev-shm-usage',
-      ],
-    });
+    browser = await puppeteer.launch();
     page = await browser.newPage();
   });
 
@@ -25,7 +19,7 @@ describe('Popover', () => {
     test('Should show popover tooltip', async () => {
       await page.goto(baseUrl);
       const submit = await page.$('[data-id=popover-button]');
-      submit.click();
+      await submit.click();
       await page.waitForSelector('[data-id=popover-tooltip]');
     });
   });
