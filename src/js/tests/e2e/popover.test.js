@@ -9,10 +9,10 @@ describe('Popover', () => {
   beforeAll(async () => {
     browser = await puppeteer.launch({
       headless: true,
-	  args: [
-		'--no-sandbox',
-		'--disable-dev-shm-usage',
-		],
+      args: [
+        '--no-sandbox',
+        '--disable-dev-shm-usage',
+      ],
     });
     page = await browser.newPage();
   });
