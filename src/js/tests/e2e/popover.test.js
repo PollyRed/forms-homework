@@ -8,9 +8,11 @@ describe('Popover', () => {
 
   beforeAll(async () => {
     browser = await puppeteer.launch({
-      // headless: false,
-      // slowMo: 100,
-      // devtools: true,
+      headless: true,
+	  args: [
+		'--no-sandbox',
+		'--disable-dev-shm-usage',
+		],
     });
     page = await browser.newPage();
   });
